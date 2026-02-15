@@ -1,5 +1,3 @@
-
-<?xml version="1.0" ?>
 <sdf version="1.9">
   <world name="iris_runway">
     
@@ -8,18 +6,18 @@
       <real_time_factor>1.0</real_time_factor>
     </physics>
 
-    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics"></plugin>
-    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands"></plugin>
-    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster"></plugin>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
     <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
       <render_engine>ogre2</render_engine>
     </plugin>
-    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
 
     <scene>
       <ambient>1.0 1.0 1.0</ambient>
       <background>0.8 0.8 0.8</background>
-      <sky></sky>
+      <sky />
     </scene>
 
     <light type="directional" name="sun">
@@ -43,18 +41,20 @@
 
     <include>
       <uri>model://iris_with_gimbal</uri>
-      <pose degrees="true">0 0 10 0 0 90</pose>
+      <pose degrees="true">0 0 30 0 0 90</pose>
     </include>
 
-    <!-- KIRMIZI HEDEF (4x4m) -->
-    <model name='red_target'>
-      <pose>15 0 0.01 0 0 0</pose>
+
+
+
+    <model name="red_target">
+      <pose>-13.661248125399547 -0.3918905599225333 0.01 0 0 2.6795045936026396</pose>  
       <static>true</static>
-      <link name='link'>
-        <visual name='visual'>
+      <link name="link">
+        <visual name="visual">
           <geometry>
             <box>
-              <size>4 4 0.02</size>
+              <size>0.66 0.66 0.02</size>
             </box>
           </geometry>
           <material>
@@ -62,25 +62,18 @@
             <diffuse>1 0 0 1</diffuse>
           </material>
         </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>4 4 0.02</size>
-            </box>
-          </geometry>
-        </collision>
       </link>
     </model>
 
-    <!-- MAVİ HEDEF (2x2m) -->
-    <model name='blue_target'>
-      <pose>15 10 0.01 0 0 0</pose>
+    
+    <model name="blue_target">
+      <pose>6.1093174746728955 1.5482445304558752 0.01 0 0 2.5731168137010516</pose>  
       <static>true</static>
-      <link name='link'>
-        <visual name='visual'>
+      <link name="link">
+        <visual name="visual">
           <geometry>
             <box>
-              <size>2 2 0.02</size>
+              <size>3.22 3.22 0.02</size>
             </box>
           </geometry>
           <material>
@@ -88,15 +81,102 @@
             <diffuse>0 0 1 1</diffuse>
           </material>
         </visual>
-        <collision name='collision'>
-          <geometry>
-            <box>
-              <size>2 2 0.02</size>
-            </box>
-          </geometry>
-        </collision>
       </link>
     </model>
 
+    
+    <model name="green_target">
+      <pose>9.63197100007713 -10.007754817972586 0.01 0 0 2.32710666019068</pose>  
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.5 2.5 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 1 0 1</ambient>
+            <diffuse>0 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    
+    <model name="yellow_target">
+      <pose>14.274567120414925 2.150248061270581 0.01 0 0 1.4552280800730772</pose>  
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.8 1.8 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 1 0 1</ambient>
+            <diffuse>1 1 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    
+    <model name="orange_target">
+      <pose>-10.529094518966513 8.291172794746082 0.01 0 0 4.129847478197384</pose>  
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>2.0 2.0 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.5 0 1</ambient>
+            <diffuse>1 0.5 0 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    
+    <model name="purple_target">
+      <pose>-7.767612745302928 -10.717806145704888 0.01 0 0 1.801507640499197</pose>  
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.5 0 1 1</ambient>
+            <diffuse>0.5 0 1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    
+    <model name="pink_target">
+      <pose>3.3286331914742533 10.203525534485475 0.01 0 0 4.460695926843253</pose>  
+      <static>true</static>
+      <link name="link">
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.2 1.2 0.02</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0.4 0.7 1</ambient>
+            <diffuse>1 0.4 0.7 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
   </world>
 </sdf>
